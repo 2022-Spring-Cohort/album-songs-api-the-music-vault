@@ -25,10 +25,10 @@ public class Populator implements CommandLineRunner {
         Album album2 = new Album("The Black Parade", "Google.com", "Reprise" );
         albumRepo.save(album2);
             //todo make duration a string
-        Song song1 = new Song("Say My Name", "google.com", 4, album1);
+        Song song1 = new Song("Say My Name", "google.com", 4,"Destiny's Child", album1);
         songRepo.save(song1);
 
-        Song song2 = new Song("The Black Parade", "Google.com", 5, album2);
+        Song song2 = new Song("The Black Parade", "Google.com", 5,"My Chemical Romance", album2);
         songRepo.save(song2);
 
 

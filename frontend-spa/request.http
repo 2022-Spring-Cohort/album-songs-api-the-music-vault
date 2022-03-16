@@ -1,0 +1,16 @@
+### Getting all albums
+GET http://localhost:8080/albums
+
+### Getting single album 
+GET http://localhost:8080/albums/1
+
+### Adding new album
+POST http://localhost:8080/albums/addAlbum
+Content-Type: application/json
+
+{
+    "title": "ham",
+    "imageUrl": "https://music.apple.com/us/album/the-writings-on-the-wall/266809606",
+    "recordLabel": "Columbia Records",
+    "songs":[]
+}

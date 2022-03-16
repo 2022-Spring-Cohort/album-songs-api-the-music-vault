@@ -16,6 +16,7 @@ public class Album {
     private String recordLabel;
     @OneToMany(mappedBy = "album")
     private Collection<Song> songs;
+
     @ElementCollection
     private Collection<Comment> comments;
 
