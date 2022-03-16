@@ -3,6 +3,7 @@ package org.wcci.apimastery.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.wcci.apimastery.entities.Album;
+import org.wcci.apimastery.entities.Song;
 import org.wcci.apimastery.repos.AlbumRepository;
 import org.wcci.apimastery.repos.SongRepository;
 
@@ -26,13 +27,20 @@ public class AlbumController {
         return albumRepo.findById(id).get();
     }
 
-
+    @PostMapping("/albums/{id}/addSong")
+    public Album getAlbum(@PathVariable long id, @RequestBody Song newSong){
+        Album album = albumRepo.findById(id).get();
+        newSong.setAlbum(album);
+        songRepo.save(newSong);
+        return album;
+    }
 
     @PostMapping("/albums/addAlbum")
     public Iterable<Album> addAlbum(@RequestBody Album newAlbum){
         albumRepo.save(newAlbum);
         return albumRepo.findAll();
     }
+
 
 
 

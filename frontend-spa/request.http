@@ -14,3 +14,22 @@ Content-Type: application/json
     "recordLabel": "Columbia Records",
     "songs":[]
 }
+
+### Adding a song to the album
+POST http://localhost:8080/albums/1/addSong
+Content-Type: application/json
+
+ {
+      "title": "My Name Is Ham",
+      "link": "google.com",
+      "duration": 4,
+      "artist": "Destiny's Ham"
+}
+
+
+### Getting all songs
+GET http://localhost:8080/songs
+
+### Getting single song
+GET http://localhost:8080/songs/3
+
