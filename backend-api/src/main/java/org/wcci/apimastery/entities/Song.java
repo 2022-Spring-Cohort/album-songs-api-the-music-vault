@@ -69,5 +69,9 @@ public class Song {
     public void setComments(Collection<Comment> comments) {
         this.comments = comments;
     }
+
+    public void addComment(Comment comment){
+        comments.add(comment);
+    }
 }
 

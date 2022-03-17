@@ -1,9 +1,8 @@
 package org.wcci.apimastery.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.wcci.apimastery.Embeddables.Comment;
 import org.wcci.apimastery.entities.Song;
 import org.wcci.apimastery.repos.AlbumRepository;
 import org.wcci.apimastery.repos.SongRepository;
@@ -15,16 +14,24 @@ public class SongController {
     @Autowired
     private AlbumRepository albumRepo;
 
-@GetMapping("/songs")
-    public Iterable<Song> getSongs(){
-    return songRepo.findAll();
-}
+    @GetMapping("/songs")
+    public Iterable<Song> getSongs() {
+        return songRepo.findAll();
+    }
 
-@GetMapping("/songs/{id}")
-    public Song getSong(@PathVariable long id){
-    return songRepo.findById(id).get();
-}
+    @GetMapping("/songs/{id}")
+    public Song getSong(@PathVariable long id) {
+        return songRepo.findById(id).get();
+    }
 
+
+    @PostMapping("/songs/{id}/addComment")
+    public Song addCommentToSong(@PathVariable long id, @RequestBody Comment newComment) {
+        Song newSong = songRepo.findById(id).get();
+        newSong.addComment(newComment);
+        songRepo.save(newSong);
+        return newSong;
+    }
 
 
 }
