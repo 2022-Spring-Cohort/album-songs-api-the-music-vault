@@ -60,4 +60,8 @@ public class Album {
         return comments;
     }
 
+    public void addComment(Comment comment) {
+        comments.add(comment);
+    }
+
 }
