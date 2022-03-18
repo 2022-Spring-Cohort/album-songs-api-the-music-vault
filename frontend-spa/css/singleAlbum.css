@@ -1,0 +1,21 @@
+
+.addNewSong{
+    border: solid black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.addNewSong:hover{
+    background-color: green;
+    color: white;
+}
+.addSong{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.addSong img{
+    margin-top: 80px;
+}
