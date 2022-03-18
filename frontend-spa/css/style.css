@@ -46,16 +46,6 @@
 .main{
     grid-area: main;
 }
-.album{
-    text-align: center;
-}
-.allAlbums{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-}
 .flip-card {
     background-color: transparent;
     width: 300px;
