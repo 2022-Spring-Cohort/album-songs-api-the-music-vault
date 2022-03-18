@@ -33,13 +33,17 @@ public class Populator implements CommandLineRunner {
         //todo make duration a string
 
         Comment comment1 = new Comment("Love this song!","HAM",5);
-        Song song1 = new Song("Say My Name", "google.com", 4,"Destiny's Child", album1, comment1);
+        Song song1 = new Song("Say My Name", "https://www.youtube.com/watch?v=sQgd6MccwZc&ab_channel=DestinysChildVEVO", 4,"Destiny's Child", album1, comment1);
 
         songRepo.save(song1);
 
         Comment comment4 = new Comment("Great song","Johnny",1);
-        Song song2 = new Song("Helena", "Google.com", 5,"My Chemical Romance", album2, comment4);
+        Song song2 = new Song("Helena", "https://www.youtube.com/watch?v=UCCyoocDxBA&ab_channel=MyChemicalRomance", 5,"My Chemical Romance", album2, comment4);
         songRepo.save(song2);
+
+        Song song3 = new Song("Bills, Bills, Bills", "https://www.youtube.com/watch?v=NiF6-0UTqtc&ab_channel=DestinysChildVEVO", 5,"Destiny's Child", album1);
+        songRepo.save(song3);
+
 
         //todo finish figuring out how to do the below after lunch:
 

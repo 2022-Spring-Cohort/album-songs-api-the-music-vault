@@ -1,6 +1,7 @@
 export default function home(albums) {
 
     return `
+    
 <main class="main">
         <h2 class="album">Albums</h2>
         <div class="allAlbums">
@@ -22,5 +23,6 @@ export default function home(albums) {
         
         </div>
     </main>
+   
     `
 }
