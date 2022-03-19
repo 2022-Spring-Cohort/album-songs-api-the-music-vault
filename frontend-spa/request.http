@@ -52,7 +52,7 @@ Content-Type: application/json
 {
           "comment": "Amazing!",
           "author": "HAMJazz",
-          "rating": 4
+          "rating": 5
         }
 
 

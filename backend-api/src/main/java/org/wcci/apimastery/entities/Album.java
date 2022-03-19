@@ -19,6 +19,7 @@ public class Album {
 
     @ElementCollection
     private Collection<Comment> comments;
+    private int averageAlbumRating;
 
 
 
@@ -60,8 +61,16 @@ public class Album {
         return comments;
     }
 
+    public int getAverageAlbumRating() {
+        return averageAlbumRating;
+    }
+
     public void addComment(Comment comment) {
         comments.add(comment);
+    }
+
+    public void setAverageAlbumRating(int averageRating) {
+        this.averageAlbumRating = averageRating;
     }
 
 }
