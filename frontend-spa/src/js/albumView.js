@@ -2,8 +2,8 @@ export default function albumView(album) {
     console.log(album);
     return `
 <main class="main">
-        <h2 class="album">${album.title}</h2>
-        <div class="allAlbums allSongs">
+        <h2 class="albumTitle">${album.title}</h2>
+        <div class="allSongs">
             <article class="flip-card song">
                 <section class="inner">
                     <div class="card-front song-front">

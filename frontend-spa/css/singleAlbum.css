@@ -1,15 +1,25 @@
+.albumTitle{
+    text-align: center;
+}
+
+.allSongs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
 .addNewSong{
-    border: solid black;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
 .addNewSong:hover{
-    background-color: green;
-    color: white;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
 }
 .addSong{
     margin-left: auto;
@@ -17,5 +27,61 @@
     display: block;
 }
 .addSong img{
-    margin-top: 80px;
+    margin-top: 20px;
+}
+
+.albumReview{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.displayReview{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.displayReview:hover{
+    box-shadow: rgba(247, 121, 121, 0.842) 0px 2px 4px, rgba(236, 209, 209, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.profileImg{
+    height: 1.5cm;
+    padding-right: 10px;
+    margin-bottom: -10x;
+}
+
+.commentDisplay{
+    margin-top: -20px;
+}
+
+.albumRating{
+    margin-top: -20px;
+    margin-bottom: -15px;;
+}
+
+#nameInput{
+    margin-bottom: 3px;
+}
+
+#ratingInput{
+    margin-bottom: 3px;  
+}
+#commentInput{
+    margin-bottom: 5px;  
+}
+.reviewInput{
+    margin: 30px;
+}
+.reviewInput button{
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
 }
