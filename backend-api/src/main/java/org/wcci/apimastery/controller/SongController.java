@@ -30,8 +30,17 @@ public class SongController {
         Song newSong = songRepo.findById(id).get();
         newSong.addComment(newComment);
         songRepo.save(newSong);
+        float sum = 0;
+        for(Comment currentComment:newSong.getComments()){
+            sum += currentComment.getRating();
+        }
+
+        System.out.println(sum);
+        newSong.setAverageSongRating(Math.round(sum/newSong.getComments().size()));
+        songRepo.save(newSong);
+
         return newSong;
+
     }
-
-
 }
+

@@ -21,11 +21,11 @@ public class Populator implements CommandLineRunner {
     public void run(String... args) throws Exception {
             //todo add album art
 
-        Comment comment3 = new Comment("THis was a great album","David",5);
+        Comment comment3 = new Comment("This was a great album","David",5);
         Album album1 = new Album("Writings on the Wall", "./images/destinysChild.jpg","Columbia Records" ,comment3);
         albumRepo.save(album1);
 
-        Comment comment2 = new Comment("Good album","Rickie",2);
+        Comment comment2 = new Comment("Good album","Rickie",1);
         Album album2 = new Album("The Black Parade", "./images/my-chemical-romance.jpg", "Reprise", comment2);
         albumRepo.save(album2);
 
@@ -38,7 +38,7 @@ public class Populator implements CommandLineRunner {
         songRepo.save(song1);
 
         Comment comment4 = new Comment("Great song","Johnny",1);
-        Song song2 = new Song("Helena", "https://www.youtube.com/watch?v=UCCyoocDxBA&ab_channel=MyChemicalRomance", 5,"My Chemical Romance", album2, comment4);
+        Song song2 = new Song("Helena", "https://www.youtube.com/watch?v=UCCyoocDxBA&ab_channel=MyChemicalRomance", 5,"My Chemical Romance", album2 ,comment4);
         songRepo.save(song2);
 
         Song song3 = new Song("Bills, Bills, Bills", "https://www.youtube.com/watch?v=NiF6-0UTqtc&ab_channel=DestinysChildVEVO", 5,"Destiny's Child", album1);

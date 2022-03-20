@@ -47,8 +47,13 @@ public class AlbumController {
         Album newAlbum = albumRepo.findById(id).get();
         newAlbum.addComment(newComment);
         albumRepo.save(newAlbum);
+
+        float sum = 0;
+        for(Comment currentComment: newAlbum.getComments()){
+            sum += currentComment.getRating();
+        }
+        newAlbum.setAverageAlbumRating(Math.round(sum/newAlbum.getComments().size()));
+        albumRepo.save(newAlbum);
         return newAlbum;
     }
-
-
 }

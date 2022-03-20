@@ -21,17 +21,19 @@ public class Song {
     @ManyToOne
     @JsonIgnore
     private Album album;
+    private int averageSongRating;
 
     public Song() {
     }
 
-    public Song(String title, String link, int duration, String artist, Album album,  Comment... comments) {
+    public Song(String title, String link, int duration, String artist, Album album, Comment... comments) {
         this.title = title;
         this.link = link;
         this.duration = duration;
         this.album = album;
         this.artist = artist;
         this.comments = Arrays.asList(comments);
+
     }
 
     public long getId() {
@@ -58,6 +60,10 @@ public class Song {
         return album;
     }
 
+    public int getAverageSongRating() {
+        return averageSongRating;
+    }
+
     public Collection<Comment> getComments() {
         return comments;
     }
@@ -70,8 +76,12 @@ public class Song {
         this.comments = comments;
     }
 
-    public void addComment(Comment comment){
+    public void addComment(Comment comment) {
         comments.add(comment);
+    }
+
+    public void setAverageSongRating(int averageRating) {
+        this.averageSongRating = averageRating;
     }
 }
 
