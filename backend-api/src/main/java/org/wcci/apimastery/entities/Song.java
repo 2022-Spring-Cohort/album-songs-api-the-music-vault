@@ -26,11 +26,10 @@ public class Song {
     public Song() {
     }
 
-<<<<<<< HEAD
-    public Song(String title, String link, String duration, String artist, Album album,  Comment... comments) {
-=======
-    public Song(String title, String link, int duration, String artist, Album album, Comment... comments) {
->>>>>>> 38775b0d48061d932f9ad4511e196bb045353caa
+
+
+    public Song(String title, String link, String duration, String artist, Album album, Comment... comments) {
+
         this.title = title;
         this.link = link;
         this.duration = duration;
