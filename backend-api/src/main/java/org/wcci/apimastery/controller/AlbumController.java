@@ -2,6 +2,7 @@ package org.wcci.apimastery.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.wcci.apimastery.Embeddables.Comment;
 import org.wcci.apimastery.entities.Album;
 import org.wcci.apimastery.entities.Song;
 import org.wcci.apimastery.repos.AlbumRepository;
@@ -41,7 +42,18 @@ public class AlbumController {
         return albumRepo.findAll();
     }
 
+    @PostMapping("/albums/{id}/addComment")
+    public Album addCommentToAlbum(@PathVariable long id, @RequestBody Comment newComment) {
+        Album newAlbum = albumRepo.findById(id).get();
+        newAlbum.addComment(newComment);
+        albumRepo.save(newAlbum);
 
-
-
+        float sum = 0;
+        for(Comment currentComment: newAlbum.getComments()){
+            sum += currentComment.getRating();
+        }
+        newAlbum.setAverageAlbumRating(Math.round(sum/newAlbum.getComments().size()));
+        albumRepo.save(newAlbum);
+        return newAlbum;
+    }
 }

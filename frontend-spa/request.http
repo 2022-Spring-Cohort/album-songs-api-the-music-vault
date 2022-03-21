@@ -2,7 +2,7 @@
 GET http://localhost:8080/albums
 
 ### Getting single album 
-GET http://localhost:8080/albums/1
+GET http://localhost:8080/albums/2
 
 ### Adding new album
 POST http://localhost:8080/albums/addAlbum
@@ -26,10 +26,35 @@ Content-Type: application/json
       "artist": "Destiny's Ham"
 }
 
+### Adding a comment to a song
+POST http://localhost:8080/songs/4/addComment
+Content-Type: application/json
+
+{
+      "comment": "Terrible!",
+      "author": "HAM",
+      "rating": 2
+    }
+
+
+
 
 ### Getting all songs
 GET http://localhost:8080/songs
 
 ### Getting single song
 GET http://localhost:8080/songs/3
+
+### Adding a comment to an album
+POST http://localhost:8080/albums/2/addComment
+Content-Type: application/json
+
+{
+          "comment": "Amazing!",
+          "author": "HAMJazz",
+          "rating": 5
+        }
+
+
+
 
