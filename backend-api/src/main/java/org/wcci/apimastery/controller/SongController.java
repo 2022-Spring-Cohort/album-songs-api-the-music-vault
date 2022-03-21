@@ -40,7 +40,21 @@ public class SongController {
         songRepo.save(newSong);
 
         return newSong;
-
     }
+
+    @DeleteMapping("/songs/{id}")
+    public Iterable<Song> deleteSong(@PathVariable long id){
+        songRepo.delete(songRepo.findById(id).get());
+        return songRepo.findAll();
+    }
+
+    @PatchMapping("/songs/{id}")
+    public Iterable<Song> updateSong(@PathVariable long id, @RequestBody String title){
+        Song song = songRepo.findById(id).get();
+        song.updateSongTitle(title);
+        songRepo.save(song);
+        return songRepo.findAll();
+    }
+
 }
 

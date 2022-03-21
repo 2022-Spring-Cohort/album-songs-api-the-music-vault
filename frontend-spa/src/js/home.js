@@ -20,12 +20,19 @@ return `
                     </article>`
                 }).join("")
                 }
-                <article class="flip-card addNewAlbum">
+                <article class="addNewAlbum">
                     <section class="addAlbum">
                         <img src="./images/plus.png" alt="Avatar" style="height: 3cm;">
                     </section>
                     <h3>Add New Album</h3>
                 </article>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Form input needed for adding song</p>
+                </div>
+        </div>
+
             </div>
         </main>
         `

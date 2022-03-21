@@ -17,6 +17,7 @@ function makeHomeView() {
 }
 makeHomeView();
 
+
 function makeHomeViewFromJson(albums) {
     containerEL.innerHTML = header();
     containerEL.innerHTML += home(albums);

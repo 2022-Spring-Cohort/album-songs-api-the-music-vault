@@ -14,9 +14,11 @@ public class Album {
     private String title;
     private String imageUrl;
     private String recordLabel;
-    @OneToMany(mappedBy = "album")
+
+    @OneToMany(mappedBy = "album", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Song> songs;
 
+    //make sure to test out deleting an album and making sure comments are removed
     @ElementCollection
     private Collection<Comment> comments;
     private int averageAlbumRating;
@@ -63,6 +65,10 @@ public class Album {
 
     public int getAverageAlbumRating() {
         return averageAlbumRating;
+    }
+
+    public void updateTitle(String newTitle){
+        title= newTitle;
     }
 
     public void addComment(Comment comment) {

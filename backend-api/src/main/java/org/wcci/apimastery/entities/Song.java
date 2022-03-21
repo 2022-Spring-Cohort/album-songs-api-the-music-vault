@@ -83,5 +83,9 @@ public class Song {
     public void setAverageSongRating(int averageRating) {
         this.averageSongRating = averageRating;
     }
+
+    public void updateSongTitle(String newSongTitle){
+        title = newSongTitle;
+    }
 }
 
