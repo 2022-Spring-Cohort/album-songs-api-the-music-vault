@@ -44,14 +44,4 @@ public class SongController {
     }
 }
 
-<<<<<<< HEAD
-@GetMapping("/songs/{id}")
-    public Song getSong(@PathVariable long id){
-    return songRepo.findById(id).get();
-}
 
-// todo to add Comment (request body of comment and path variable of song or an album)
-
-}
-=======
->>>>>>> 38775b0d48061d932f9ad4511e196bb045353caa
