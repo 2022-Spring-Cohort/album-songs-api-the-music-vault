@@ -42,3 +42,5 @@ function makeAlbumView(album){
     containerEL.innerHTML += footer();
 
 }
+
+

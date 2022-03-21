@@ -10,7 +10,7 @@
         rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./images/fabicon.png">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/singleAlbum.css">
     <link rel="stylesheet" href="./css/modal.css">
     <title>The Music Vault</title>
 </head>
@@ -31,18 +31,19 @@
         </nav>
     </header>
     <main class="main">
-        <h2 class="album">Albums</h2>
+        <h2 class="albumTitle">Single Album</h2>
         <img class="backBtn" src="./images/backBtn.png" alt="back button">
-        <div class="allAlbums">
-            <article class="flip-card">
+        <div class="allSongs">
+            <article class="flip-card song">
                 <section class="inner">
-                    <div class="card-front">
+                    <div class="card-front song-front">
                         <img src="./images/destinysChild.jpg" alt="Avatar" style="width:300px;height:300px;">
                     </div>
-                    <section class="card-back">
-                        <h1 class="albumTitle">Writing's On The Wall</h1>
-                        <p class="avgRatingAlbum">Average rating</p>
-                        <p class="recordLabel">Columbia Records</p>
+                    <section class="card-back album-back">
+                        <h1 class="artist">Beyonce</h1>
+                        <p class="avgRatingSong">Average rating</p>
+                        <a class="songLink" href="https://www.youtube.com/watch?v=sQgd6MccwZc&ab_channel=DestinysChildVEVO">Click here to Listen</a>
+                        <p class="duration"> 5 min</p>
                         <div class="updateIcon">
                             <img class="editBtn" src="./images/edit.png" alt="adit icon">
                             <img class="deleteBtn" src="./images/delete.png" alt="delete icon">
@@ -50,11 +51,11 @@
                     </section>
                 </section>
             </article>
-            <article class="addNewAlbum" id="openModal">
-                <section class="addAlbum">
+            <article class="addNewSong" id="openModal">
+                <section class="addSong">
                     <img src="./images/plus.png" alt="Avatar" style="height: 3cm;">
                 </section>
-                <h3>Add New Album</h3>
+                <h3>Add New Song</h3>
             </article>
         </div>
 
@@ -66,13 +67,33 @@
             </div>
         </div>
 
+        <article class="albumReview">
+            <form class="reviewInput">
+                <label for="fullName">Full Name:</label><br>
+                <input id="nameInput" type="text" name="fullName" placeholder="John Doe"><br>
+                <label for="rating">Rate The Song:</label><br>
+                <input id="ratingInput" type="text"  name="rating" placeholder="5"><br> 
+                <label for="comment">Comment:</label><br>
+                <input id="commentInput" type="text" name="comment" placeholder="Best song!" ><br>
+                <input type="submit" value="Submit">
+            </form> 
+            <div class="displayReview">
+                <img class="profileImg" src="./images/profile.png" alt="profile icon">
+                <section class="commentDisplay">
+                    <h3 class="name">John Doe</h3>
+                    <h4 class="albumRating">3</h4>
+                    <p class="albumComment">I love this album! I listen to it all the time.</p>
+                </section>
+            </div>
+            
+        </atricle>
     </main>
     <footer class="footer">
+        
         <p>Copyright &copy;
             <script>document.write(new Date().getFullYear())</script> The Music Vault, WCCI
         </p>
     </footer>
-    
 </body>
 <script src="./src/js/modal.js" type ="module"></script>
 </html>
