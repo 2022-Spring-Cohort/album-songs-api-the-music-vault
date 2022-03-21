@@ -14,7 +14,7 @@ public class Song {
     private long id;
     private String title;
     private String link;
-    private int duration;
+    private String duration;
     private String artist;
     @ElementCollection
     private Collection<Comment> comments;
@@ -25,7 +25,7 @@ public class Song {
     public Song() {
     }
 
-    public Song(String title, String link, int duration, String artist, Album album,  Comment... comments) {
+    public Song(String title, String link, String duration, String artist, Album album,  Comment... comments) {
         this.title = title;
         this.link = link;
         this.duration = duration;
@@ -50,7 +50,7 @@ public class Song {
         return link;
     }
 
-    public int getDuration() {
+    public String getDuration() {
         return duration;
     }
 
