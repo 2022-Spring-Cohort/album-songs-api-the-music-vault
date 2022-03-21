@@ -15,24 +15,27 @@ return `
                                 <h1 class="albumTitle">${album.title}</h1>
                                 <input type="hidden" class="id_field" value="${album.id}" > 
                                 <p class="recordLabel">${album.recordLabel}</p>
+                                <div class="updateIcon">
+                                    <img class="editBtn" src="./images/edit.png" alt="adit icon">
+                                    <img class="deleteBtn" src="./images/delete.png" alt="delete icon">
+                                </div>
                             </section>
                         </section>
                     </article>`
                 }).join("")
                 }
-                <article class="addNewAlbum">
+                <article class="addNewAlbum" id="addNewAlbum">
                     <section class="addAlbum">
                         <img src="./images/plus.png" alt="Avatar" style="height: 3cm;">
                     </section>
                     <h3>Add New Album</h3>
                 </article>
+
                 <div id="myModal" class="modal">
                     <div class="modal-content">
                     <span class="close">&times;</span>
-                    <p>Form input needed for adding song</p>
+                    <p>Form input needed for adding album</p>
                 </div>
-        </div>
-
             </div>
         </main>
         `
