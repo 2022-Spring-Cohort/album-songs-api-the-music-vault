@@ -24,19 +24,19 @@ public class Populator implements CommandLineRunner {
         // todo make duration a string. DONE
 
         //Avery's Favorite Album and Song
-        Album album1 = new Album("Writings on the Wall", "Google.com", "Columbia Records");
+        Album album1 = new Album("Writings on the Wall", "./images/WOTW.jpg", "Columbia Records");
         albumRepo.save(album1);
         Song song1 = new Song("Say My Name", "https://www.youtube.com/watch?v=sQgd6MccwZc", "4:31", "Destiny's Child", album1);
         songRepo.save(song1);
 
         //Mike's Favorite Album and Song
-        Album album2 = new Album("The Black Parade", "Google.com", "Reprise");
+        Album album2 = new Album("The Black Parade", "./images/THP.jpg", "Reprise");
         albumRepo.save(album2);
         Song song2 = new Song("Welcome to the Black Parade", "https://www.youtube.com/watch?v=RRKJiM9Njr8", "5:11", "My Chemical Romance", album2);
         songRepo.save(song2);
 
         //Extra Album and Songs 1
-        Album album3 = new Album("A Fever You Can't Sweat Out", "Google.com", "Fueled by Ramen");
+        Album album3 = new Album("A Fever You Can't Sweat Out", "./images/AFYCSO.jpg", "Fueled by Ramen");
         albumRepo.save(album3);
         Song song3 = new Song("I Write Sins, Not Tragedies", "https://www.youtube.com/watch?v=vc6vs-l5dkc", "3:06", "Panic! At the Disco", album3);
         songRepo.save(song3);
@@ -46,7 +46,7 @@ public class Populator implements CommandLineRunner {
         songRepo.save(song5);
 
         //Extra Album and Songs 2
-        Album album4 = new Album("The Rise and Fall of Ziggy Stardust and the Spiders From Mars", "Google.com", "RCA");
+        Album album4 = new Album("The Rise and Fall of Ziggy Stardust and the Spiders From Mars", "./images/TRAFOZSATSFM.jpg", "RCA");
         albumRepo.save(album4);
         Song song6 = new Song("Starman", "https://www.youtube.com/watch?v=sI66hcu9fIs", "4:16", "David Bowie", album4);
         songRepo.save(song6);
@@ -56,7 +56,7 @@ public class Populator implements CommandLineRunner {
         songRepo.save(song8);
 
         //Extra Album and Songs 3
-        Album album5 = new Album("Oracular Spectacular", "Google.com", "Columbia Records");
+        Album album5 = new Album("Oracular Spectacular", "./images/OC.jpg", "Columbia Records");
         albumRepo.save(album5);
         Song song9 = new Song("Time to Pretend", "https://www.youtube.com/watch?v=B9dSYgd5Elk", "4:21", "MGMT", album5);
         songRepo.save(song9);
@@ -66,7 +66,7 @@ public class Populator implements CommandLineRunner {
         songRepo.save(song11);
 
         //Extra Album and Songs 4
-        Album album6 = new Album("Demon Days", "Google.com", "Virgin Records");
+        Album album6 = new Album("Demon Days", ".images/Gorillaz_Demon_Days.PNG", "Virgin Records");
         albumRepo.save(album6);
         Song song12 = new Song("Feel Good Inc.", "https://www.youtube.com/watch?v=HyHNuVaZJ-k", "3:41", "Gorillaz", album6);
         songRepo.save(song12);
