@@ -16,7 +16,7 @@ return `
                                 <input type="hidden" class="id_field" value="${album.id}" > 
                                 <p class="recordLabel">${album.recordLabel}</p>
                                 <div class="updateIcon">
-                                    <img class="editBtn" src="./images/edit.png" alt="adit icon">
+                                    <img class="editBtn" id="editBtn" src="./images/edit.png" alt="adit icon">
                                     <img class="deleteBtn" src="./images/delete.png" alt="delete icon">
                                 </div>
                             </section>
@@ -34,7 +34,17 @@ return `
                 <div id="myModal" class="modal">
                     <div class="modal-content">
                     <span class="close">&times;</span>
-                    <p>Form input needed for adding album</p>
+                    <input type="text" class="album-title" placeholder="Writing's On The Wall" /><br>
+                    <input type="text" class="ImgUrl" placeholder="Album Cover URL" /><br>
+                    <input type="text" class="company" placeholder="Columbia Records" /><br>
+                    <button class="addAlbumSubmitBtn" type="submit">Submit</button>
+                </div>
+
+                <div id="editAlbumTitle" class="editTitlemodal">
+                    <div class="editTitlemodal-content">
+                    <span class="close">&times;</span>
+                    <input type="text" class="update-album-title" placeholder="Edit Album Title" />
+                    <button type="submit">Submit</button>
                 </div>
             </div>
         </main>
