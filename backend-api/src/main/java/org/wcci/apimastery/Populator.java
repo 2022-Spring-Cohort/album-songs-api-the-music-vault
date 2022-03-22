@@ -30,7 +30,7 @@ public class Populator implements CommandLineRunner {
         songRepo.save(song1);
 
         //Mike's Favorite Album and Song
-        Album album2 = new Album("The Black Parade", "./images/THP.jpg", "Reprise");
+        Album album2 = new Album("The Black Parade", "./images/TBP.jpg", "Reprise");
         albumRepo.save(album2);
         Song song2 = new Song("Welcome to the Black Parade", "https://www.youtube.com/watch?v=RRKJiM9Njr8", "5:11", "My Chemical Romance", album2);
         songRepo.save(song2);
@@ -66,7 +66,7 @@ public class Populator implements CommandLineRunner {
         songRepo.save(song11);
 
         //Extra Album and Songs 4
-        Album album6 = new Album("Demon Days", "./images/Gorillaz_Demon_Days.PNG", "Virgin Records");
+        Album album6 = new Album("Demon Days", "./images/DD.PNG", "Virgin Records");
         albumRepo.save(album6);
         Song song12 = new Song("Feel Good Inc.", "https://www.youtube.com/watch?v=HyHNuVaZJ-k", "3:41", "Gorillaz", album6);
         songRepo.save(song12);

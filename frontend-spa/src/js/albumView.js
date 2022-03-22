@@ -5,19 +5,21 @@ export default function albumView(album) {
         <h2 class="albumTitle">${album.title}</h2>
         <img class="backBtn" src="./images/backBtn.png" alt="back button"> 
         <div class="allSongs">
-            <article class="flip-card song">
+            <article class="flip-card song" >
+        
                 <section class="inner">
                     <div class="card-front song-front">
                         <img src="${album.imageUrl}" alt="Avatar" style="width:300px;height:300px;">
                     </div>
-                    <section class="card-back album-back">
+                    <section class="card-back song-back">
                     ${
 
                         album.songs.map(song => {
-                            return `<h1 class="albumTitle">${song.title}</h1>
-                            <p class="recordLabel">${song.artist}</p>
-                            <p class="recordLabel">${song.duration}</p>
-                            <a class="recordLabel" href="${song.link}">Click Here To Listen</a>`;
+                            return `<h1 class="songTitle">${song.title}</h1>
+                            <p class="artistLabel">${song.artist}</p>
+                            <p class="durationLabel">${song.duration}</p>
+                            <a class="linkLabel" href="${song.link}">Click Here To Listen</a>
+                            <input type="hidden" class="songId_field" value="${song.id}" > `;
                         }).join("")
                     }
                     <div class="updateIcon">
