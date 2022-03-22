@@ -13,6 +13,7 @@ return `
                             </div>
                             <section class="card-back">
                                 <h1 class="albumTitle">${album.title}</h1>
+                                <h1 class="averageAlbumRating">${album.averageAlbumRating}</h1>
                                 <input type="hidden" class="id_field" value="${album.id}" > 
                                 <p class="recordLabel">${album.recordLabel}</p>
                                 <div class="updateIcon">

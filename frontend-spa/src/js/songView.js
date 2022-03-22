@@ -10,7 +10,7 @@ export default function songView(song){
                     </div>
                         <section class="card-back songInfo">
                             <h1 class="artist">${song.artist}</h1>
-                            <p class="avgRatingSong">${song.rating}</p>
+                            <p class="avgRatingSong">${song.averageSongRating}</p>
                             <a class="songLink" href="${song.link}">Click here to Listen</a>
                             <p class="duration">Duration: ${song.duration}</p>
                             <div class="updateIcon">
@@ -29,18 +29,22 @@ export default function songView(song){
                         <p class="comment">I love this song!</p>
                     </section>
                 </div>
-                <form class="reviewInput">
+                
+                <div class="reviewInput">
                     <label for="fullName">Full Name:</label><br>
                     <input id="nameInput" type="text" name="fullName" placeholder="John Doe"><br>
                     <label for="rating">Rate The Song:</label><br>
                     <input id="ratingInput" type="text" name="rating" placeholder="5"><br>
                     <label for="comment">Comment:</label><br>
                     <input id="commentInput" type="text" name="comment" placeholder="Best song!"><br>
-                    <input type="submit" value="Submit">
-                </form>
+                    <button class ="songReviewSubmitBtn">Submit </button>
+                </div>
 
                 </atricle>
         </div>
         <img class="backBtn" src="./images/backBtn.png" alt="back button">
     </main>
     `;}
+
+    // Changed line 33 from form to div so the page wouldn't refresh. Also, changed  from a submit button on line 40, to a regular
+    //button
