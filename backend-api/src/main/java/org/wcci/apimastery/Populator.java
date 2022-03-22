@@ -66,7 +66,7 @@ public class Populator implements CommandLineRunner {
         songRepo.save(song11);
 
         //Extra Album and Songs 4
-        Album album6 = new Album("Demon Days", ".images/Gorillaz_Demon_Days.PNG", "Virgin Records");
+        Album album6 = new Album("Demon Days", "./images/Gorillaz_Demon_Days.PNG", "Virgin Records");
         albumRepo.save(album6);
         Song song12 = new Song("Feel Good Inc.", "https://www.youtube.com/watch?v=HyHNuVaZJ-k", "3:41", "Gorillaz", album6);
         songRepo.save(song12);

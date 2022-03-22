@@ -16,7 +16,8 @@ return `
                                 <input type="hidden" class="id_field" value="${album.id}" > 
                                 <p class="recordLabel">${album.recordLabel}</p>
                                 <div class="updateIcon">
-                                    <img class="editBtn" id="editBtn" src="./images/edit.png" alt="adit icon">
+                                     <input type="text" class="update-album-title" placeholder="Edit Album Title" />
+                                    <button class="updateBtn" type="submit">Submit</button>
                                     <img class="deleteBtn" src="./images/delete.png" alt="delete icon">
                                 </div>
                             </section>
@@ -43,8 +44,7 @@ return `
                 <div id="editAlbumTitle" class="editTitlemodal">
                     <div class="editTitlemodal-content">
                     <span class="close">&times;</span>
-                    <input type="text" class="update-album-title" placeholder="Edit Album Title" />
-                    <button type="submit">Submit</button>
+                   
                 </div>
             </div>
         </main>

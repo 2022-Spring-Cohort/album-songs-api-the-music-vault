@@ -3,6 +3,7 @@ export default function albumView(album) {
     return `
 <main class="main">
         <h2 class="albumTitle">${album.title}</h2>
+        <img class="backBtn" src="./images/backBtn.png" alt="back button"> 
         <div class="allSongs">
             <article class="flip-card song">
                 <section class="inner">
@@ -19,10 +20,27 @@ export default function albumView(album) {
                             <a class="recordLabel" href="${song.link}">Click Here To Listen</a>`;
                         }).join("")
                     }
+                    <div class="updateIcon">
+                    <input type="text" class="update-song-title" placeholder="Edit Album Title" />
+                    <button class="updateSongBtn" type="submit">Submit</button>
+                    <img class="deleteBtn" src="./images/delete.png" alt="delete icon">
+                </div>
                     </section>
                 </section>
             </article>
-            <article class="flip-card addNewSong">
+
+            <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+               <input type="text" class="song-title" placeholder="Song Title" /><br>
+                <input type="text" class="songUrl" placeholder="Song URL" /><br>
+                <input type="text" class="duration" placeholder="Song Duration" /><br>
+                <input type="text" class="artistName" placeholder="Artist Name" /><br>
+                <button class="addNewSongBtn" type="submit">Submit</button>
+            </div>
+        </div>
+            <article class="addNewSong" id="addNewSong">
                 <section class="addSong">
                     <img src="./images/plus.png" alt="Avatar" style="height: 3cm;">
                 </section>

@@ -2,7 +2,7 @@
 GET http://localhost:8080/albums
 
 ### Getting single album 
-GET http://localhost:8080/albums/2
+GET http://localhost:8080/albums/5
 
 ### Adding new album
 POST http://localhost:8080/albums/addAlbum
@@ -16,7 +16,7 @@ Content-Type: application/json
 }
 
 ### Deleting an album
-DELETE http://localhost:8080/albums/2
+DELETE http://localhost:8080/albums/5
 
 ### Adding a song to the album
 POST http://localhost:8080/albums/1/addSong
@@ -30,7 +30,7 @@ Content-Type: application/json
 }
 
 ### Adding a comment to an album
-POST http://localhost:8080/albums/2/addComment
+POST http://localhost:8080/albums/1/addComment
 Content-Type: application/json
 
 {
@@ -40,7 +40,7 @@ Content-Type: application/json
 }
 
 ### updating the title of the album
-PATCH http://localhost:8080/albums/2
+PATCH http://localhost:8080/albums/1
 
 newAlbumTitle
 
@@ -51,10 +51,10 @@ newAlbumTitle
 GET http://localhost:8080/songs
 
 ### Getting single song
-GET http://localhost:8080/songs/3
+GET http://localhost:8080/songs/2
 
 ### Deleting a song
-DELETE http://localhost:8080/songs/7
+DELETE http://localhost:8080/songs/2
 
 
 ### Adding a comment to a song
@@ -68,7 +68,7 @@ Content-Type: application/json
 }
 
 ### updating the song title 
-PATCH http://localhost:8080/songs/3
+PATCH http://localhost:8080/songs/4
 
 newSongTitle
 
