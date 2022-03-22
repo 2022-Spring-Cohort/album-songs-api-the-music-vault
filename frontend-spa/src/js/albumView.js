@@ -16,7 +16,7 @@ export default function albumView(album) {
                             return `<h1 class="albumTitle">${song.title}</h1>
                             <p class="recordLabel">${song.artist}</p>
                             <p class="recordLabel">${song.duration}</p>
-                            <p class="recordLabel">${song.link}</p>`;
+                            <a class="recordLabel" href="${song.link}">Click Here To Listen</a>`;
                         }).join("")
                     }
                     </section>
