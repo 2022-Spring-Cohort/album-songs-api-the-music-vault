@@ -3,9 +3,10 @@ import header from "./header.js";
 import footer from './footer.js';
 import albumView from "./albumView.js";
 import {modals, albumEditTitleModal} from "./modal.js";
-import {
-    albums
-} from "./albumsJson.js";
+import { albums } from "./albumsJson.js";
+import { songs } from "./songsJson.js";
+import songView from "./songView.js";
+
 
 const containerEL = document.querySelector(".container");
 function makeHomeView() {
@@ -14,38 +15,11 @@ function makeHomeView() {
         .then(albums => {
             makeHomeViewFromJson(albums)
         }).then(() => {
-            modals('addNewAlbum');
-
-            // const modalEl = document.getElementById("myModal");
-            // modalEl.style.display = "none";
-            // btn1.addEventListener("click", () => {
-               
-            //     const span = document.getElementsByClassName("close")[0];
-            
-            //     modal('addNewAlbum');
-                
-                // btn1.onclick = function() {
-                //   modal.style.display = "block";
-                // }
-
-                // // When the user clicks on <span> (x), close the modal
-                // span.onclick = function() {
-                //     modal.style.display = "none";
-                // }
-
-                // // When the user clicks anywhere outside of the modal, close it
-                // window.onclick = function(event) {
-                //     if (event.target == modal) {
-                //         modal.style.display = "none";
-                //     }
-                // }
-            // })
+            modals('addNewAlbum')
 
         })
 }
 makeHomeView();
-
-
 
 function makeHomeViewFromJson(albums) {
     containerEL.innerHTML = header();
@@ -116,10 +90,13 @@ function makeHomeViewFromJson(albums) {
     })
 }
 
+
 function makeAlbumView(album) {
     containerEL.innerHTML = header();
     containerEL.innerHTML += albumView(album);
     containerEL.innerHTML += footer();
+   
+    bindSongViewFromJson(album.songs);
 
     const backBtn = containerEL.querySelector(".backBtn");
     backBtn.addEventListener("click", () => {
@@ -153,4 +130,27 @@ function makeAlbumView(album) {
     
     })
 
+}
+
+function bindSongViewFromJson(songs) {
+  
+
+    const cardEl = containerEL.querySelectorAll(".song");
+    cardEl.forEach(song => {
+        let songIdEl = song.querySelector(".songId_field");
+        const songH1 = song.querySelector(".songTitle");
+        songH1.addEventListener("click", () => {
+            songs.forEach(songJson => {
+                if (songJson.id == songIdEl.value) {
+                    makeSongView(songJson);
+                }
+            })
+        })
+    })
+}
+
+function makeSongView(songJson){
+    containerEL.innerHTML = header();
+    containerEL.innerHTML += songView(songJson);
+    containerEL.innerHTML += footer();
 }
