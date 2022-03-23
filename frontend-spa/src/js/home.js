@@ -18,7 +18,7 @@ return `
                                 <p class="recordLabel">${album.recordLabel}</p>
                                 <div class="updateIcon">
                                      <input type="text" class="update-album-title" placeholder="Edit Album Title" />
-                                    <button class="updateBtn" type="submit">Submit</button>
+                                    <button class="updateBtn">Submit</button>
                                     <img class="deleteBtn" src="./images/delete.png" alt="delete icon">
                                 </div>
                             </section>

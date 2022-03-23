@@ -54,14 +54,17 @@ function makeHomeViewFromJson(albums) {
                 })
                 .then(res => res.json())
                 .then(newAlbums => {
-                    makeHomeViewFromJson(newAlbums);
+                    makeHomeView();
                 })
         })
 
         // albumEditTitleModal("editBtn")
+        
         const editBtn = album.querySelector(".updateBtn");
         editBtn.addEventListener("click", () => {
             const updateInput = album.querySelector(".update-album-title");
+            if(updateInput.value != ""){
+            
             fetch("http://localhost:8080/albums/" + albumIdEl.value, {
                     method: "PATCH",
                     body: updateInput.value
@@ -70,7 +73,9 @@ function makeHomeViewFromJson(albums) {
                 .then(newAlbums => {
                     makeHomeViewFromJson(newAlbums);
                 })
+            }
         })
+    
     })
     const albumTitleInput = containerEL.querySelector(".album-title");
     const imageUrlInput = containerEL.querySelector(".ImgUrl");
@@ -123,48 +128,54 @@ function makeAlbumView(album) {
     const artistNameInput = containerEL.querySelector(".artistName")
     const addNewSongBtn = containerEL.querySelector(".addNewSongBtn");
     addNewSongBtn.addEventListener("click", () => {
-        const newSongJson = {
-            "title": songTitleInput.value,
-            "link": songUrlInput.value,
-            "duration": durationInput.value,
-            "artist": artistNameInput.value,
-            "comments": []
-        }
-        fetch(`http://localhost:8080/albums/${album.id}/addSong`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(newSongJson)
-            })
-            .then(res => res.json())
-            .then(album => {
-                makeAlbumView(album);
-            })
 
-    })
-    const albumCmtBtn = containerEL.querySelector(".albumSubmitBtn");
-    const authorInput = containerEL.querySelector("#nameInput");
-    const ratingInput = containerEL.querySelector("#ratingInput");
-    const commentInput = containerEL.querySelector("#commentInput");
-    albumCmtBtn.addEventListener("click", () => {
-        const newCommentJson = {
-            "author": authorInput.value,
-            "rating": ratingInput.value,
-            "comment": commentInput.value
+            if (songTitleInput.value != "" && songUrlInput.value != "" && durationInput.value != "" && artistNameInput.value != ""){
+                const newSongJson = {
+                    "title": songTitleInput.value,
+                    "link": songUrlInput.value,
+                    "duration": durationInput.value,
+                    "artist": artistNameInput.value,
+                    "comments": []
+                }
+            fetch(`http://localhost:8080/albums/${album.id}/addSong`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newSongJson)
+                })
+                .then(res => res.json())
+                .then(album => {
+                    makeAlbumView(album);
+
+                })
         }
-        fetch(`http://localhost:8080/albums/${album.id}/addComment`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(newCommentJson)
-            })
-            .then(res => res.json())
-            .then(newComment => {
-                makeAlbumView(newComment);
-            })
     })
+
+const albumCmtBtn = containerEL.querySelector(".albumSubmitBtn");
+const authorInput = containerEL.querySelector("#nameInput");
+const ratingInput = containerEL.querySelector("#ratingInput");
+const commentInput = containerEL.querySelector("#commentInput");
+albumCmtBtn.addEventListener("click", () => {
+    if(authorInput.value!="" && ratingInput.value!="" && commentInput.value!=""){
+    const newCommentJson = {
+        "author": authorInput.value,
+        "rating": ratingInput.value,
+        "comment": commentInput.value
+    }
+    fetch(`http://localhost:8080/albums/${album.id}/addComment`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newCommentJson)
+        })
+        .then(res => res.json())
+        .then(newComment => {
+            makeAlbumView(newComment);
+        })
+    }
+})
 
 }
 
@@ -189,6 +200,7 @@ function bindSongViewFromJson(album) {
         const editSongBtn = song.querySelector(".updateSongBtn");
         editSongBtn.addEventListener("click", () => {
             const updateSongInput = song.querySelector(".update-song-title");
+            if(updateSongInput.value!=""){
             fetch("http://localhost:8080/songs/" + songIdEl.value, {
                     method: "PATCH",
                     body: updateSongInput.value
@@ -197,6 +209,7 @@ function bindSongViewFromJson(album) {
                 .then(newSongs => {
                     makeAlbumView(newSongs);
                 })
+            }
         })
 
 
@@ -228,6 +241,7 @@ function makeSongView(songJson, albumJson) {
     const songRatingInput = containerEL.querySelector("#ratingInput");
     const songCommentInput = containerEL.querySelector("#commentInput");
     songCmtBtn.addEventListener("click", () => {
+       if(songAuthorInput.value!=""&& songRatingInput.value!="" && songCommentInput.value!="" ){
         const newSongCommentJson = {
             "author": songAuthorInput.value,
             "rating": songRatingInput.value,
@@ -250,6 +264,7 @@ function makeSongView(songJson, albumJson) {
                     })
                 })
             })
+        }
     })
 
 
