@@ -135,12 +135,10 @@ function makeHomeViewFromJson(albums) {
                 })
                 .then(res => res.json())
                 .then(album => {
-                    makeHomeView(album);
+                    makeAlbumView(album);
                 })
 
         })
-        console.log(album);
-        console.log(containerEL);
         const albumCmtBtn = containerEL.querySelector(".albumSubmitBtn");
         const authorInput = containerEL.querySelector("#nameInput");
         const ratingInput = containerEL.querySelector("#ratingInput");
@@ -166,6 +164,8 @@ function makeHomeViewFromJson(albums) {
 
     }
 
+
+
     function bindSongViewFromJson(songs) {
 
 
@@ -180,6 +180,18 @@ function makeHomeViewFromJson(albums) {
                     }
                 })
             })
+            //This will be for the delete song button. Need to finish
+            // const deleteSongBtn = album.querySelector(".deleteBtn")
+            // deleteSongBtn.addEventListener("click", () => {
+            //     console.log(123)
+            //     fetch("http://localhost:8080/albums/" + albumIdEl.value, {
+            //             method: 'DELETE'
+            //         })
+            //         .then(res => res.json())
+            //         .then(newAlbums => {
+            //             makeHomeViewFromJson(newAlbums);
+            //         })
+            // })  
         })
     }
 
@@ -187,4 +199,30 @@ function makeHomeViewFromJson(albums) {
         containerEL.innerHTML = header();
         containerEL.innerHTML += songView(songJson);
         containerEL.innerHTML += footer();
+
+
+        const songCmtBtn = containerEL.querySelector(".songReviewSubmitBtn");
+        const songAuthorInput = containerEL.querySelector("#nameInput");
+        const songRatingInput = containerEL.querySelector("#ratingInput");
+        const songCommentInput = containerEL.querySelector("#commentInput");
+        songCmtBtn.addEventListener("click", () => {
+            const newSongCommentJson = {
+                    "author": songAuthorInput.value,
+                    "rating": songRatingInput.value,
+                    "comment": songCommentInput.value
+            }
+            fetch(`http://localhost:8080/songs/${songJson.id}/addComment`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newSongCommentJson)
+                })
+                .then(res => res.json())
+                .then(newSongComment => {
+                    makeSongView(newSongComment);  
+                })
+            })
+
+        
     }

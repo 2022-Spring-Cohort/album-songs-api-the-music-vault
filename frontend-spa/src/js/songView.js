@@ -23,11 +23,16 @@ export default function songView(song){
             <article class="songComments">
                 <div class="displayReview">
                     <img class="profileImg" src="./images/profile.png" alt="profile icon">
-                    <section class="commentDisplay">
-                        <h3 class="name">John Doe</h3>
-                        <h4 class="rating">3</h4>
-                        <p class="comment">I love this song!</p>
-                    </section>
+                    ${
+                        song.comments.map(comment => {
+                        return`<img class="profileImg" src="./images/profile.png" alt="profile icon">
+                        <section class="commentDisplay">
+                            <h3 class="name">${comment.author}</h3>
+                            <h4 class="rating">${comment.rating}</h4>
+                            <p class="comment">${comment.comment}</p>
+                        </section> `
+                        }).join("")
+                    }
                 </div>
                 
                 <div class="reviewInput">
