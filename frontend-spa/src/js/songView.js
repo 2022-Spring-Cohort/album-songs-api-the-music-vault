@@ -21,7 +21,6 @@ export default function songView(song,album){
             </article>
             <article class="songComments">
                 <div class="displayReview">
-                    <img class="profileImg" src="./images/profile.png" alt="profile icon">
                     ${
                         song.comments.map(comment => {
                         return`<img class="profileImg" src="./images/profile.png" alt="profile icon">

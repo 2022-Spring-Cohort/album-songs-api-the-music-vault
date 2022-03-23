@@ -24,8 +24,8 @@ export default function albumView(album) {
                             <a class="linkLabel" href="${song.link}">Click Here To Listen</a>
                             <input type="hidden" class="songId_field" value="${song.id}" > 
                             <div class="updateIcon">
-                    <input type="text" class="update-song-title" placeholder="Edit Album Title" />
-                    <button class="updateSongBtn" type="submit">Submit</button>
+                    <input type="text" class="update-song-title" placeholder="Edit Song Title" />
+                    <button class="updateSongBtn">Submit</button>
                     <img class="deleteBtn" src="./images/delete.png" alt="delete icon">
                 </div>
                     </section>
