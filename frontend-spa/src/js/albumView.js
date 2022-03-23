@@ -18,8 +18,8 @@ export default function albumView(album) {
                     </div>
                             <section class="card-back song-back">
                             <h1 class="songTitle">${song.title}</h1>
-                          
                             <p class="artistLabel">${song.artist}</p>
+                            <p class="averageSongRating">${song.averageSongRating}</p>
                             <p class="durationLabel">${song.duration}</p>
                             <a class="linkLabel" href="${song.link}">Click Here To Listen</a>
                             <input type="hidden" class="songId_field" value="${song.id}" > 

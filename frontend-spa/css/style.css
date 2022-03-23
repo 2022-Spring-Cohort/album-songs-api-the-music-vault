@@ -4,54 +4,53 @@
     'header'
     'main'
     'footer';
-    /* gap: 1em; */
-    /* background-color: #bbb; */
+    gap: 5em;
+   
+    background-color: #dadbdc;
 }
 .header{
+    height: 2.5in;
     grid-area: header;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    background-color: rgba(82, 9, 9, 0.466);
+    background-image: url(../images/headerbackground.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;   
+  
+
 }
-.projectName{
-    font-family: 'Bangers', cursive;
-    font-family: 'Sansita Swashed', cursive;
-    text-align: center;
-}
+.headerImage{
+    max-width: 100%;
+    max-height: 100%; 
+}  
 .nav{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content:space-around;
+    align-items: center;
     margin-right: 30px;
-    margin-top: -10px;
+    margin-top: 240px;
+    background-color: #caa656;
+    width: 100%;
 }
-.buttons{
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    font-weight: bold;
-    border: transparent;
-}
-.buttons:hover{
-    background-color: #2980b9;
-    color: white;
-}
-.about{
-    margin-left: 60px;
-    margin-right: 60px;
+    
+.nav-links{
+    font-size: x-large;
+    padding: 10px;
 }
 .main{
     grid-area: main;
+    
 }
 .flip-card {
     background-color: transparent;
     width: 300px;
     height: 300px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    /* perspective: 1000px; */
+    margin-bottom: 3em;
 }
 
 .inner {
