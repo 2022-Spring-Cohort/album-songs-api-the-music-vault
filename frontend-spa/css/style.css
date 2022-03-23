@@ -5,8 +5,10 @@
     'main'
     'footer';
     gap: 5em;
-   
     background-color: #dadbdc;
+    font-family: 'Bungee', cursive;
+    
+    
 }
 .header{
     height: 2.5in;
@@ -33,9 +35,17 @@
     align-items: center;
     margin-right: 30px;
     margin-top: 240px;
-    background-color: #caa656;
+    /* background-color: #caa656; */
+    background-color: #ffffff;
+    font-family: 'Overpass', sans-serif;
     width: 100%;
+    /* border-color: #99713B; */
 }
+.nav a:visited{
+    color: #6BA9AC;
+    text-decoration: none;
+  
+  }
     
 .nav-links{
     font-size: x-large;
@@ -43,7 +53,13 @@
 }
 .main{
     grid-area: main;
+    padding:0em 15em 0em 15em;
+    color: #574F46;
     
+}
+
+.album{
+    padding-bottom: 2em ;
 }
 .flip-card {
     background-color: transparent;
@@ -51,7 +67,14 @@
     height: 300px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     margin-bottom: 3em;
+    
 }
+.card-back>h1,p{
+    color:#ffffff;
+    font-family: 'Overpass', sans-serif;
+    font-size: 22px;
+}
+
 
 .inner {
     position: relative;
@@ -65,7 +88,7 @@
 
 .flip-card:hover .inner {
     transform: rotateY(180deg);
-    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    box-shadow: #caa55686 -5px 5px, #caa55648 -10px 10px, #caa55623 -15px 15px, #caa55610 -20px 20px, #caa55609 -25px 25px;
 }
 
 .card-front, .card-back {
@@ -82,7 +105,7 @@
 }
     
 .card-back {
-    background-color: lightblue;
+    background-color: #6BA9AC;
     color: rgb(15, 15, 15);
     transform: rotateY(180deg);
 }

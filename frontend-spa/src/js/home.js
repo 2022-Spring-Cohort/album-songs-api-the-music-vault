@@ -1,11 +1,13 @@
 export default function home(albums) {
 
-return `
+    return `
     <main class="main">
-            <h2 class="album">Albums</h2>
+            <h1 class="album">Albums in the Vault</h1>
             <div class="allAlbums">
                 ${albums.map(album => {
                 return ` 
+           
+                <div class= "flipcardContainer">
                     <article class="flip-card">
                         <section class="inner">
                             <div class="card-front">
@@ -13,9 +15,9 @@ return `
                             </div>
                             <section class="card-back">
                                 <h1 class="albumTitle">${album.title}</h1>
-                                <h1 class="averageAlbumRating">${album.averageAlbumRating}</h1>
+                                <h1 class="averageAlbumRating">Album Rating:<br>${album.averageAlbumRating}</h1>
                                 <input type="hidden" class="id_field" value="${album.id}" > 
-                                <p class="recordLabel">${album.recordLabel}</p>
+                                <p class="recordLabel">Record Label:<br>${album.recordLabel}</p>
                                 <div class="updateIcon">
                                      <input type="text" class="update-album-title" placeholder="Edit Album Title" />
                                     <button class="updateBtn">Submit</button>
@@ -23,7 +25,8 @@ return `
                                 </div>
                             </section>
                         </section>
-                    </article>`
+                    </article>
+                    </div>`
                 }).join("")
                 }
                 <article class="addNewAlbum" id="addNewAlbum">
