@@ -1,4 +1,4 @@
-export default function songView(song){
+export default function songView(song,album){
     return`
 <main class="main">
         <h2 class="songTitle">${song.title}</h2>
@@ -6,17 +6,16 @@ export default function songView(song){
             <article class="flip-card">
                 <section class="inner">
                     <div class="card-front song-front">
-                        <img src="./images/destinysChild.jpg" alt="Avatar" style="width:300px;height:300px;">
+                        <img src="${album.imageUrl}" alt="Avatar" style="width:300px;height:300px;">
                     </div>
+                
                         <section class="card-back songInfo">
                             <h1 class="artist">${song.artist}</h1>
                             <p class="avgRatingSong">${song.averageSongRating}</p>
                             <a class="songLink" href="${song.link}">Click here to Listen</a>
                             <p class="duration">Duration: ${song.duration}</p>
-                            <div class="updateIcon">
-                                <img class="editBtn" src="./images/edit.png" alt="adit icon">
-                                <img class="deleteBtn" src="./images/delete.png" alt="delete icon">
-                        </div>
+                            <input type="hidden" class="id_field" value="${song.id}">
+                        
                         </section>
                 </section>
             </article>

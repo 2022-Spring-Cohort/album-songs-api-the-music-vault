@@ -39,7 +39,7 @@ return `
                     <input type="text" class="album-title" placeholder="Writing's On The Wall" /><br>
                     <input type="text" class="ImgUrl" placeholder="Album Cover URL" /><br>
                     <input type="text" class="company" placeholder="Columbia Records" /><br>
-                    <button class="addAlbumSubmitBtn" type="submit">Submit</button>
+                    <button class="addAlbumSubmitBtn">Submit</button>
                 </div>
 
                 <div id="editAlbumTitle" class="editTitlemodal">

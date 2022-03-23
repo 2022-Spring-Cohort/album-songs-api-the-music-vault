@@ -23,6 +23,7 @@ public class Song {
     private Album album;
     private int averageSongRating;
 
+
     public Song() {
     }
 
