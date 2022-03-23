@@ -103,10 +103,11 @@ function makeHomeViewFromJson(albums) {
 
     function makeAlbumView(album) {
         containerEL.innerHTML = header();
+        console.log(album);
         containerEL.innerHTML += albumView(album);
         containerEL.innerHTML += footer();
 
-        bindSongViewFromJson(album.songs);
+        bindSongViewFromJson(album);
 
         const backBtn = containerEL.querySelector(".backBtn");
         backBtn.addEventListener("click", () => {
@@ -166,7 +167,7 @@ function makeHomeViewFromJson(albums) {
 
 
 
-    function bindSongViewFromJson(songs) {
+    function bindSongViewFromJson(album) {
 
 
         const cardEl = containerEL.querySelectorAll(".song");
@@ -174,9 +175,9 @@ function makeHomeViewFromJson(albums) {
             let songIdEl = song.querySelector(".songId_field");
             const songH1 = song.querySelector(".songTitle");
             songH1.addEventListener("click", () => {
-                songs.forEach(songJson => {
+                album.songs.forEach(songJson => {
                     if (songJson.id == songIdEl.value) {
-                        makeSongView(songJson);
+                        makeSongView(songJson, album);
                     }
                 })
             })
@@ -195,12 +196,15 @@ function makeHomeViewFromJson(albums) {
         })
     }
 
-    function makeSongView(songJson) {
+    function makeSongView(songJson, albumJson) {
         containerEL.innerHTML = header();
         containerEL.innerHTML += songView(songJson);
         containerEL.innerHTML += footer();
 
-
+        const backBtn = containerEL.querySelector(".backBtn");
+        backBtn.addEventListener("click", () => {
+            makeAlbumView(albumJson);
+        })
         const songCmtBtn = containerEL.querySelector(".songReviewSubmitBtn");
         const songAuthorInput = containerEL.querySelector("#nameInput");
         const songRatingInput = containerEL.querySelector("#ratingInput");
