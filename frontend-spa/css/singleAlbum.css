@@ -23,7 +23,7 @@
 .addNewSong:hover{
     box-shadow: #caa55686 -5px 5px, #caa55648 -10px 10px, #caa55623 -15px 15px, #caa55610 -20px 20px, #caa55609 -25px 25px;
 }
-}
+
 .addSong{
     margin-left: auto;
     margin-right: auto;
@@ -39,20 +39,25 @@
     margin-left: auto;
     margin-right: auto;
 }
-
+.requiredComments, .requiredInputSong {
+    color: red;
+    visibility: hidden;
+    font-size: large;
+}
 .displayReview{
     display: flex;
     flex-direction: row;
     align-self: center;
     justify-content: center;
     border-radius: 10px;
+    margin-right: 20px;
     padding: 10px;
     overflow: hidden;
     margin-bottom: 20px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .displayReview:hover{
-    box-shadow: rgba(247, 121, 121, 0.842) 0px 2px 4px, rgba(236, 209, 209, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    box-shadow: #8db9b57a 0px 2px 4px, #8db9b560 0px 7px 13px -3px, #8db9b528 0px -3px 0px inset;
 }
 
 .profileImg{
@@ -63,6 +68,7 @@
 
 .commentDisplay{
     margin-top: -20px;
+
 }
 
 .albumRating{

@@ -16,25 +16,28 @@ export default function songView(song,album){
                             <a class="songLink" href="${song.link}">Click here to Listen</a>
                             <p class="duration">Duration: ${song.duration}</p>
                             <input type="hidden" class="id_field" value="${song.id}">
-                        
                         </section>
                 </section>
             </article>
             <article class="songComments">
-                <div class="displayReview">
+                
                     ${
                         song.comments.map(comment => {
-                        return`<img class="profileImg" src="./images/profile.png" alt="profile icon">
+                        return`
+                        <div class="displayReview">
+                        <img class="profileImg" src="./images/profile.png" alt="profile icon">
                         <section class="commentDisplay">
                             <h3 class="name">${comment.author}</h3>
                             <h4 class="rating">${comment.rating}</h4>
                             <p class="comment">${comment.comment}</p>
-                        </section> `
+                        </section> 
+                        </div>`
                         }).join("")
                     }
-                </div>
+                
                 
                 <div class="reviewInput">
+                    <p class="requiredCommentsSong">*All fields are required*</p>
                     <label for="fullName">Full Name:</label><br>
                     <input id="nameInput" type="text" name="fullName" placeholder="John Doe"><br>
                     <label for="rating">Rate The Song:</label><br>

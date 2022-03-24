@@ -17,6 +17,7 @@
 
 .displayReview{
     display: flex;
+    background-color: #e07b39;
     flex-direction: row;
     align-self: center;
     justify-content: center;
@@ -24,12 +25,11 @@
     padding: 10px;
     overflow: hidden;
     margin-bottom: 20px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
 }
 .displayComment:hover{
-    box-shadow: rgba(247, 121, 121, 0.842) 0px 2px 4px, rgba(236, 209, 209, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    box-shadow: #8db9b57a 0px 2px 4px, #8db9b560 0px 7px 13px -3px, #8db9b528 0px -3px 0px inset;
 }
-
 .profileImg{
     height: 1.5cm;
     padding-right: 10px;
@@ -42,6 +42,12 @@
 .comment{
     margin-bottom: -5px;
 }
+.requiredCommentsSong{
+    color: red;
+    visibility: hidden;
+    font-size: large;
+}
+
 .rating{
     margin-top: -15px;
     margin-bottom: -15px;;
