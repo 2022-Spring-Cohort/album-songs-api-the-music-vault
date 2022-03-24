@@ -3,6 +3,7 @@ export default function songView(song,album){
 <main class="main">
 <h2 class="songTitleHeader">Song:<br></h2>
         <h2 class="songTitle">${song.title}</h2>
+        <img class="backBtn" src="./images/backBtn.png" alt="back button">
         <div class="singleSong">
             <article class="flip-card">
                 <section class="inner">
@@ -12,7 +13,7 @@ export default function songView(song,album){
                 
                         <section class="card-back songInfo">
                             <h1 class="artist">Artist:<br> ${song.artist}</h1>
-                            <p class="avgRatingSong">${song.averageSongRating}</p>
+                            <p class="avgRatingSong">Song Rating: ${song.averageSongRating}</p>
                             <a class="songLink" href="${song.link}">Click here to Listen</a>
                             <p class="duration">Duration: ${song.duration}</p>
                             <input type="hidden" class="id_field" value="${song.id}">
@@ -49,7 +50,7 @@ export default function songView(song,album){
 
                 </atricle>
         </div>
-        <img class="backBtn" src="./images/backBtn.png" alt="back button">
+        
     </main>
     `;}
 

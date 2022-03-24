@@ -3,8 +3,7 @@ import header from "./header.js";
 import footer from './footer.js';
 import albumView from "./albumView.js";
 import {
-    modals,
-    albumEditTitleModal
+    modals
 } from "./modal.js";
 import {
     albums
@@ -13,6 +12,7 @@ import {
     songs
 } from "./songsJson.js";
 import songView from "./songView.js";
+
 
 
 const containerEL = document.querySelector(".container");
@@ -29,10 +29,35 @@ function makeHomeView() {
 }
 makeHomeView();
 
+function aboutUsModal(){
+    const aboutTheCreators = containerEL.querySelector(".aboutUs");
+    const aboutUsModal = containerEL.querySelector(".aboutusmodal");
+    const closeModal = containerEL.querySelector(".closeModal");
+    aboutTheCreators.addEventListener("click", () => {
+        aboutUsModal.style.display = "block";
+        closeModal.style.display = "block";
+        console.log("working");       
+    })
+    
+    closeModal.addEventListener("click", () => {
+        aboutUsModal.style.display = "none";
+        closeModal.style.display = "none";
+    })
+    }
+
 function makeHomeViewFromJson(albums) {
     containerEL.innerHTML = header();
     containerEL.innerHTML += home(albums);
     containerEL.innerHTML += footer();
+
+   
+        aboutUsModal();
+
+    
+   
+
+    
+
 
     const flipCardEl = containerEL.querySelectorAll(".flip-card");
     flipCardEl.forEach(album => {
@@ -117,9 +142,11 @@ function makeHomeViewFromJson(albums) {
 
 
 function makeAlbumView(album) {
+   
     containerEL.innerHTML = header();
     containerEL.innerHTML += albumView(album);
     containerEL.innerHTML += footer();
+    aboutUsModal();
 
     bindSongViewFromJson(album);
 
@@ -251,6 +278,7 @@ function makeSongView(songJson, albumJson) {
     containerEL.innerHTML = header();
     containerEL.innerHTML += songView(songJson, albumJson);
     containerEL.innerHTML += footer();
+    aboutUsModal();
 
     const backBtn = containerEL.querySelector(".backBtn");
     backBtn.addEventListener("click", () => {
@@ -292,6 +320,5 @@ function makeSongView(songJson, albumJson) {
 
         }
     })
-
-
 }
+

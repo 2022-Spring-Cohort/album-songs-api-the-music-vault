@@ -1,4 +1,4 @@
-.modal {
+.modal, .aboutusmodal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -11,7 +11,7 @@
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
 }
-.modal-content {
+.modal-content, .aboutusmodal-content {
     background-color: #DEE8EC;
     margin: auto;
     padding: 20px;
@@ -20,7 +20,7 @@
     border-radius: 10px;
     height: 40%;
 }
-.content{
+.content, .aboutuscontent{
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -46,15 +46,60 @@
 .songUrl{
     margin-top: 10px;
 }
-.close {
+.close,.closeModal {
+   
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
-.close:hover,.close:focus {
+.closeModal{
+    display: none;
+}
+
+
+.close:hover,.close:focus, .closeModal:hover, .closeModal:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
 
+.aboutuscontent{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.aboutuscontent h1, h2{
+    text-align: center;
+}
+
+.photos{
+    display: flex;
+    flex-direction: row;
+}
+.names p{
+    margin-top: -5px;
+    color: black;
+    margin-left: 22px;
+    font-weight: bold;
+}
+.headshots{
+    transition: transform .2s;
+}
+.headshots:hover{
+    -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari 3-8 */
+  transform: scale(1.2); 
+}
+.avery p{
+    margin-left: 28px;
+}
+
+.mike p{
+    margin-left: 34px;
+}
+.avery{
+    margin-left: 20px;
+    margin-right: 20px;
+}
