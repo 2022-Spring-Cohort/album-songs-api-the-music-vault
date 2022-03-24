@@ -1,8 +1,12 @@
 export default function albumView(album) {
     return `
 <main class="main">
+        <h2 class="albumTitleHeader">Album:<br></h2>
         <h2 class="albumTitle">${album.title}</h2>
+        <br><br>
+        
         <img class="backBtn" src="./images/backBtn.png" alt="back button"> 
+        <h2 class="albumSongList">Song List<h2>
         <div class="allSongs">
             
                    
@@ -14,11 +18,11 @@ export default function albumView(album) {
         
                 <section class="inner">
                     <div class="card-front song-front">
-                        <img src="${album.imageUrl}" alt="Avatar" style="width:300px;height:300px;">
+                        <img src="${album.imageUrl}" alt="Avatar" style="width:375px;height:375px;">
                     </div>
                             <section class="card-back song-back">
                             <h1 class="songTitle">${song.title}</h1>
-                            <p class="artistLabel">${song.artist}</p>
+                            <p class="artistLabel">Artist: ${song.artist}</p>
                             <p class="averageSongRating">${song.averageSongRating}</p>
                             <p class="durationLabel">${song.duration}</p>
                             <a class="linkLabel" href="${song.link}">Click Here To Listen</a>
@@ -26,7 +30,7 @@ export default function albumView(album) {
                             <div class="updateIcon">
                     <input type="text" class="update-song-title" placeholder="Edit Song Title" />
                     <button class="updateSongBtn">Submit</button>
-                    <img class="deleteBtn" src="./images/delete.png" alt="delete icon">
+                    <img class="deleteBtn" src="./images/delete1.png" alt="delete icon">
                 </div>
                     </section>
                     </section>

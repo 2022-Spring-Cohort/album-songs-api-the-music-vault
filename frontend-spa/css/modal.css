@@ -23,13 +23,16 @@
 
 /* Modal Content */
 .modal-content {
-    background-color: red;
+    background-color: #DEE8EC;
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 6px solid #6BA9AC;
     width: 80%;
     border-radius: 10px;
+    height: 40%;
+    
 }
+
 
 /* The Close Button */
 .close {
