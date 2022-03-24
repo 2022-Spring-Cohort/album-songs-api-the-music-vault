@@ -11,7 +11,7 @@ export default function home(albums) {
                     <article class="flip-card">
                         <section class="inner">
                             <div class="card-front">
-                                <img src="${album.imageUrl}" alt="Avatar" style="width:300px;height:300px;">
+                                <img src="${album.imageUrl}" alt="Avatar" style="width:375px;height:375px;">
                             </div>
                             <section class="card-back">
                                 <h1 class="albumTitle">${album.title}</h1>
@@ -21,7 +21,7 @@ export default function home(albums) {
                                 <div class="updateIcon">
                                      <input type="text" class="update-album-title" placeholder="Edit Album Title" />
                                     <button class="updateBtn">Submit</button>
-                                    <img class="deleteBtn" src="./images/delete.png" alt="delete icon">
+                                    <img class="deleteBtn" src="./images/delete1.png" alt="delete icon">
                                 </div>
                             </section>
                         </section>
@@ -39,9 +39,9 @@ export default function home(albums) {
                 <div id="myModal" class="modal">
                     <div class="modal-content">
                     <span class="close">&times;</span>
-                    <input type="text" class="album-title" placeholder="Writing's On The Wall" /><br>
+                    <input type="text" class="album-title" placeholder="Album Title" /><br>
                     <input type="text" class="ImgUrl" placeholder="Album Cover URL" /><br>
-                    <input type="text" class="company" placeholder="Columbia Records" /><br>
+                    <input type="text" class="recordLabel" placeholder="Record Label" /><br>
                     <button class="addAlbumSubmitBtn">Submit</button>
                 </div>
 

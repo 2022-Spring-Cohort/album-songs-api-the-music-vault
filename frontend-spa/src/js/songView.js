@@ -1,16 +1,17 @@
 export default function songView(song,album){
     return`
 <main class="main">
+<h2 class="songTitleHeader">Song:<br></h2>
         <h2 class="songTitle">${song.title}</h2>
         <div class="singleSong">
             <article class="flip-card">
                 <section class="inner">
                     <div class="card-front song-front">
-                        <img src="${album.imageUrl}" alt="Avatar" style="width:300px;height:300px;">
+                        <img src="${album.imageUrl}" alt="Avatar" style="width:375px;height:375px;">
                     </div>
                 
                         <section class="card-back songInfo">
-                            <h1 class="artist">${song.artist}</h1>
+                            <h1 class="artist">Artist:<br> ${song.artist}</h1>
                             <p class="avgRatingSong">${song.averageSongRating}</p>
                             <a class="songLink" href="${song.link}">Click here to Listen</a>
                             <p class="duration">Duration: ${song.duration}</p>
