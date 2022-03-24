@@ -60,7 +60,7 @@ export default function albumView(album) {
                 <label for="fullName">Full Name:</label><br>
                 <input id="nameInput" type="text" name="fullName" placeholder="John Doe"><br>
                 <label for="rating">Rate The Song:</label><br>
-                <input id="ratingInput" type="text"  name="rating" placeholder="Requires a number, ex 5"><br> 
+                <input id="ratingInput" type="number"  name="rating" placeholder="Requires a number, ex 5"><br> 
                 <label for="comment">Comment:</label><br>
                 <input id="commentInput" type="text" name="comment" placeholder="Best song!" ><br>
                 <button class="albumSubmitBtn">Submit</button>
