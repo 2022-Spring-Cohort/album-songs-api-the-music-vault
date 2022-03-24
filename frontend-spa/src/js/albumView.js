@@ -19,8 +19,8 @@ export default function albumView(album) {
                         <section class="card-back song-back">
                             <h1 class="songTitle">${song.title}</h1>
                             <p class="artistLabel">Artist: ${song.artist}</p>
-                            <p class="averageSongRating">${song.averageSongRating}</p>
-                            <p class="durationLabel">${song.duration}</p>
+                            <p class="averageSongRating">Song Rating: ${song.averageSongRating}</p>
+                            <p class="durationLabel">Duration: ${song.duration}</p>
                             <a class="linkLabel" href="${song.link}">Click Here To Listen</a>
                             <input type="hidden" class="songId_field" value="${song.id}" > 
                             <div class="updateIcon">
@@ -60,7 +60,7 @@ export default function albumView(album) {
                 <label for="fullName">Full Name:</label><br>
                 <input id="nameInput" type="text" name="fullName" placeholder="John Doe"><br>
                 <label for="rating">Rate The Song:</label><br>
-                <input id="ratingInput" type="number"  name="rating" placeholder="Requires a number, ex 5"><br> 
+                <input id="ratingInput" type="number"  name="rating" placeholder="Number required"><br> 
                 <label for="comment">Comment:</label><br>
                 <input id="commentInput" type="text" name="comment" placeholder="Best song!" ><br>
                 <button class="albumSubmitBtn">Submit</button>

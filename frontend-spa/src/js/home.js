@@ -49,6 +49,9 @@ export default function home(albums) {
                         </div>
                     </div>
                 </div>
+                
+           
+
             </div>
         </main>
         `

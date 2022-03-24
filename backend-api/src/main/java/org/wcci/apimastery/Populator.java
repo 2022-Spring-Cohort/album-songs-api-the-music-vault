@@ -28,6 +28,8 @@ public class Populator implements CommandLineRunner {
         albumRepo.save(album1);
         Song song1 = new Song("Say My Name", "https://www.youtube.com/watch?v=sQgd6MccwZc", "4:31", "Destiny's Child", album1);
         songRepo.save(song1);
+        Song song19 = new Song("Bills, Bills, Bills", "https://www.youtube.com/watch?v=NiF6-0UTqtc", "4:15", "Destiny's Child", album1);
+        songRepo.save(song19);
 
         //Mike's Favorite Album and Song
         Album album2 = new Album("The Black Parade", "./images/TBP.jpg", "Reprise");
@@ -35,15 +37,15 @@ public class Populator implements CommandLineRunner {
         Song song2 = new Song("Welcome to the Black Parade", "https://www.youtube.com/watch?v=RRKJiM9Njr8", "5:11", "My Chemical Romance", album2);
         songRepo.save(song2);
 
-        //Extra Album and Songs 1
-        Album album3 = new Album("A Fever You Can't Sweat Out", "./images/AFYCSO.jpg", "Fueled by Ramen");
+        Album album3 = new Album("A Seat At the Table", "./images/solange.jpg", "Saint;Columbia");
         albumRepo.save(album3);
-        Song song3 = new Song("I Write Sins, Not Tragedies", "https://www.youtube.com/watch?v=vc6vs-l5dkc", "3:06", "Panic! At the Disco", album3);
-        songRepo.save(song3);
-        Song song4 = new Song("There's a Good Reason These Table Are Numbered Honey, You Just Haven't Thought of it Yet", "https://www.youtube.com/watch?v=AKfrDroTPRg", "3:40", "Panic! At the Disco", album3);
-        songRepo.save(song4);
-        Song song5 = new Song("Lying Is the Most Fun a Girl Can Have Without Taking Her Clothes Off", "https://www.youtube.com/watch?v=8AZxUtZ2ZgI", "3:20", "Panic! At the Disco", album3);
-        songRepo.save(song5);
+        Song song17 = new Song("Cranes In the Sky", "https://www.youtube.com/watch?v=S0qrinhNnOM", "4:11", "Solange", album3);
+        songRepo.save(song17);
+        Song song18 = new Song("Don't Touch My Hair", "https://www.youtube.com/watch?v=YTtrnDbOQAU", "4:18", "Solange", album3);
+        songRepo.save(song18);
+
+        //Extra Album and Songs 1
+
 
         //Extra Album and Songs 2
         Album album4 = new Album("The Rise and Fall of Ziggy Stardust and the Spiders From Mars", "./images/TRAFOZSATSFM.jpg", "RCA");
@@ -74,6 +76,24 @@ public class Populator implements CommandLineRunner {
         songRepo.save(song13);
         Song song14 = new Song("Dare", "https://www.youtube.com/watch?v=uAOR6ib95kQ", "4:04", "Gorillaz", album6);
         songRepo.save(song14);
+
+        Album album7 = new Album("The Miseducation of Lauryn Hill", "./images/laurynhill.jpeg", "RuffHouse Records");
+        albumRepo.save(album7);
+        Song song15 = new Song("Nothing Even Matters ft. D'Angelo", "https://www.youtube.com/watch?v=5aDIqM0n0Eg", "5:51", "Lauryn Hill", album7);
+        songRepo.save(song15);
+        Song song16 = new Song("Everything is Everything", "https://www.youtube.com/watch?v=x5ED4_LOeEY", "4:53", "Lauryn Hill", album7);
+        songRepo.save(song16);
+
+        Album album8 = new Album("A Fever You Can't Sweat Out", "./images/AFYCSO.jpg", "Fueled by Ramen");
+        albumRepo.save(album8);
+        Song song3 = new Song("I Write Sins, Not Tragedies", "https://www.youtube.com/watch?v=vc6vs-l5dkc", "3:06", "Panic! At the Disco", album8);
+        songRepo.save(song3);
+        Song song4 = new Song("There's a Good Reason These Table Are Numbered Honey, You Just Haven't Thought of it Yet", "https://www.youtube.com/watch?v=AKfrDroTPRg", "3:40", "Panic! At the Disco", album8);
+        songRepo.save(song4);
+        Song song5 = new Song("Lying Is the Most Fun a Girl Can Have Without Taking Her Clothes Off", "https://www.youtube.com/watch?v=8AZxUtZ2ZgI", "3:20", "Panic! At the Disco", album8);
+        songRepo.save(song5);
+
+
 
         //todo add album art
 
