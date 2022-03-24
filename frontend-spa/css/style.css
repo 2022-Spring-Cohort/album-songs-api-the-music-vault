@@ -23,8 +23,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;   
-  
-
 }
 .headerImage{
     max-width: 100%;
@@ -38,29 +36,24 @@
     align-items: center;
     margin-right: 30px;
     margin-top: 240px;
-    /* background-color: #caa656; */
     background-color: #ffffff;
     font-family: 'Overpass', sans-serif;
     width: 100%;
-    /* border-color: #99713B; */
 }
 .nav a:visited{
     color: #6BA9AC;
     text-decoration: none;
-  
-  }
-    
+}
 .nav-links{
     font-size: x-large;
     padding: 10px;
 }
+
 .main{
     grid-area: main;
     padding:0em 10em 0em 10em;
     color: #574F46;
-    
 }
-
 .album{
     padding-bottom: 2em ;
     font-family: 'Bungee', cursive;
@@ -80,7 +73,6 @@
 }
 
 .albumSongList{
-    
     text-align: center;
 }
 

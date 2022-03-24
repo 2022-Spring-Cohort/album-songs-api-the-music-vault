@@ -61,25 +61,31 @@ function makeHomeViewFromJson(albums) {
         // albumEditTitleModal("editBtn")
         
         const editBtn = album.querySelector(".updateBtn");
+        const requiredInputAlbum = album.querySelector(".requiredInputAlbum");
         editBtn.addEventListener("click", () => {
+            requiredInputAlbum.style.visibility = "hidden";
             const updateInput = album.querySelector(".update-album-title");
             if(updateInput.value != ""){
             
-            fetch("http://localhost:8080/albums/" + albumIdEl.value, {
-                    method: "PATCH",
-                    body: updateInput.value
-                })
-                .then(res => res.json())
-                .then(newAlbums => {
-                    makeHomeViewFromJson(newAlbums);
-                })
+                fetch("http://localhost:8080/albums/" + albumIdEl.value, {
+                        method: "PATCH",
+                        body: updateInput.value
+                    })
+                    .then(res => res.json())
+                    .then(newAlbums => {
+                        makeHomeViewFromJson(newAlbums);
+                    })
+            }
+            else {
+                requiredInputAlbum.style.visibility = "visible";
             }
         })
     
     })
     const albumTitleInput = containerEL.querySelector(".album-title");
     const imageUrlInput = containerEL.querySelector(".ImgUrl");
-    const recordLabelInput = containerEL.querySelector(".company");
+    const recordLabelInput = containerEL.querySelector(".newRecordLabel");
+    const requiredEl = containerEL.querySelector(".required");
     const addAlbumBtn = containerEL.querySelector(".addAlbumSubmitBtn");
     addAlbumBtn.addEventListener("click", () => {
         if (albumTitleInput.value != "" && imageUrlInput.value != "" && recordLabelInput.value != "") {
@@ -88,6 +94,7 @@ function makeHomeViewFromJson(albums) {
                 "imageUrl": imageUrlInput.value,
                 "recordLabel": recordLabelInput.value,
             }
+            requiredEl.style.visibility = "hidden";
             fetch(`http://localhost:8080/albums/addAlbum`, {
                     method: 'POST',
                     headers: {
@@ -101,9 +108,9 @@ function makeHomeViewFromJson(albums) {
                 })
         }
         //This is where we put a message of what we want them to do
-        // else{
-
-        // }
+        else{
+            requiredEl.style.visibility = "visible";
+        }
 
     })
 }
@@ -127,6 +134,7 @@ function makeAlbumView(album) {
     const durationInput = containerEL.querySelector(".duration");
     const artistNameInput = containerEL.querySelector(".artistName")
     const addNewSongBtn = containerEL.querySelector(".addNewSongBtn");
+    const requiredEl1 = containerEL.querySelector(".required");
     addNewSongBtn.addEventListener("click", () => {
 
             if (songTitleInput.value != "" && songUrlInput.value != "" && durationInput.value != "" && artistNameInput.value != ""){
@@ -137,6 +145,7 @@ function makeAlbumView(album) {
                     "artist": artistNameInput.value,
                     "comments": []
                 }
+                requiredEl1.style.visibility = "hidden";
             fetch(`http://localhost:8080/albums/${album.id}/addSong`, {
                     method: 'POST',
                     headers: {
@@ -150,20 +159,25 @@ function makeAlbumView(album) {
 
                 })
         }
+        else{
+            requiredEl1.style.visibility = "visible";
+        }
     })
 
 const albumCmtBtn = containerEL.querySelector(".albumSubmitBtn");
 const authorInput = containerEL.querySelector("#nameInput");
 const ratingInput = containerEL.querySelector("#ratingInput");
 const commentInput = containerEL.querySelector("#commentInput");
+const requiredComments = containerEL.querySelector(".requiredComments");
 albumCmtBtn.addEventListener("click", () => {
     if(authorInput.value!="" && ratingInput.value!="" && commentInput.value!=""){
-    const newCommentJson = {
-        "author": authorInput.value,
-        "rating": ratingInput.value,
-        "comment": commentInput.value
-    }
-    fetch(`http://localhost:8080/albums/${album.id}/addComment`, {
+        requiredComments.style.visibility = "hidden";
+        const newCommentJson = {
+            "author": authorInput.value,
+            "rating": ratingInput.value,
+            "comment": commentInput.value
+        }
+        fetch(`http://localhost:8080/albums/${album.id}/addComment`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -175,6 +189,9 @@ albumCmtBtn.addEventListener("click", () => {
             makeAlbumView(newComment);
         })
     }
+    else{
+        requiredComments.style.visibility = "visible";
+    }
 })
 
 }
@@ -182,8 +199,6 @@ albumCmtBtn.addEventListener("click", () => {
 
 
 function bindSongViewFromJson(album) {
-
-
     const cardEl = containerEL.querySelectorAll(".song");
     cardEl.forEach(song => {
         let songIdEl = song.querySelector(".songId_field");
@@ -198,9 +213,11 @@ function bindSongViewFromJson(album) {
         })
 
         const editSongBtn = song.querySelector(".updateSongBtn");
+        const requiredInputEl1 = song.querySelector(".requiredInputSong")
         editSongBtn.addEventListener("click", () => {
             const updateSongInput = song.querySelector(".update-song-title");
             if(updateSongInput.value!=""){
+                requiredInputEl1.style.visibility = "hidden";
             fetch("http://localhost:8080/songs/" + songIdEl.value, {
                     method: "PATCH",
                     body: updateSongInput.value
@@ -209,6 +226,9 @@ function bindSongViewFromJson(album) {
                 .then(newSongs => {
                     makeAlbumView(newSongs);
                 })
+            }
+            else{
+                requiredInputEl1.style.visibility = "visible";
             }
         })
 
@@ -240,30 +260,36 @@ function makeSongView(songJson, albumJson) {
     const songAuthorInput = containerEL.querySelector("#nameInput");
     const songRatingInput = containerEL.querySelector("#ratingInput");
     const songCommentInput = containerEL.querySelector("#commentInput");
+    const requiredCommentsEl1 = containerEL.querySelector(".requiredCommentsSong");
     songCmtBtn.addEventListener("click", () => {
        if(songAuthorInput.value!=""&& songRatingInput.value!="" && songCommentInput.value!="" ){
-        const newSongCommentJson = {
-            "author": songAuthorInput.value,
-            "rating": songRatingInput.value,
-            "comment": songCommentInput.value
-        }
-        fetch(`http://localhost:8080/songs/${songJson.id}/addComment`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(newSongCommentJson)
-            })
-            .then(res => res.json())
-            .then(newAlbums => {
-                newAlbums.forEach(album => {
-                    album.songs.forEach(song => {
-                        if (song.id == songJson.id) {
-                            makeSongView(song, album)
-                        }
+            requiredCommentsEl1.style.visibility = "hidden";
+            const newSongCommentJson = {
+                "author": songAuthorInput.value,
+                "rating": songRatingInput.value,
+                "comment": songCommentInput.value
+            }
+            fetch(`http://localhost:8080/songs/${songJson.id}/addComment`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newSongCommentJson)
+                })
+                .then(res => res.json())
+                .then(newAlbums => {
+                    newAlbums.forEach(album => {
+                        album.songs.forEach(song => {
+                            if (song.id == songJson.id) {
+                                makeSongView(song, album)
+                            }
+                        })
                     })
                 })
-            })
+        }
+        else{
+            requiredCommentsEl1.style.visibility = "visible";
+
         }
     })
 

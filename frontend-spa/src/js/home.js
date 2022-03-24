@@ -23,6 +23,7 @@ export default function home(albums) {
                                     <button class="updateBtn">Submit</button>
                                     <img class="deleteBtn" src="./images/delete1.png" alt="delete icon">
                                 </div>
+                                <p class="requiredInputAlbum">*All fields are required*</p>
                             </section>
                         </section>
                     </article>
@@ -38,17 +39,15 @@ export default function home(albums) {
 
                 <div id="myModal" class="modal">
                     <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <input type="text" class="album-title" placeholder="Album Title" /><br>
-                    <input type="text" class="ImgUrl" placeholder="Album Cover URL" /><br>
-                    <input type="text" class="recordLabel" placeholder="Record Label" /><br>
-                    <button class="addAlbumSubmitBtn">Submit</button>
-                </div>
-
-                <div id="editAlbumTitle" class="editTitlemodal">
-                    <div class="editTitlemodal-content">
-                    <span class="close">&times;</span>
-                   
+                        <span class="close">&times;</span>
+                        <div class="content">
+                            <p class="required">*All fields are required*</p>
+                            <input type="text" class="album-title centerInput" placeholder="Album Title" /><br>
+                            <input type="text" class="ImgUrl centerInput" placeholder="Album Cover URL" /><br>
+                            <input type="text" class="newRecordLabel centerInput" placeholder="Record Label" /><br>
+                            <button class="addAlbumSubmitBtn">Submit</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>

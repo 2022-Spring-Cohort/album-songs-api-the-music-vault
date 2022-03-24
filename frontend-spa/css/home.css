@@ -9,6 +9,11 @@
     flex-wrap: wrap;
     gap: 20px;
 }
+.requiredInputAlbum {
+    color: red;
+    visibility: hidden;
+    font-size: large;
+}
 .addNewAlbum{
     width: 300px;
     height: 300px;
