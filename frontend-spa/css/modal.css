@@ -27,6 +27,24 @@
   align-items: center;
   margin-top: -20px;
 }
+
+.close,.closeModal {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.closeModal{
+    display: none;
+}
+
+.close:hover,.close:focus, .closeModal:hover, .closeModal:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
 .centerInput{
     width: 40%;
 }
@@ -46,60 +64,70 @@
 .songUrl{
     margin-top: 10px;
 }
-.close,.closeModal {
-   
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-.closeModal{
-    display: none;
-}
 
 
-.close:hover,.close:focus, .closeModal:hover, .closeModal:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
+/*about us Modal*/
+.aboutusmodal-content{
+    margin-top: -68px;
+    width: 60%;
+    height: 80%;
+    overflow: scroll;
+    overflow-x: hidden;
 }
-
 .aboutuscontent{
     display: flex;
     margin-top: 20px;
     justify-content: center;
 }
 
-.aboutuscontent h1, h2{
+.aboutuscontent, .aboutUs, .linkInfo{
     text-align: center;
+}
+
+.linkInfo{
+    margin-top: -5px;
 }
 
 .photos{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 15px;
 }
 .names p{
-    margin-top: -5px;
     color: black;
-    margin-left: 22px;
     font-weight: bold;
+    margin-top: -5px;
 }
-.headshots{
+.profile{
+    height: 170px;
+    width: auto;
+    padding: 5px;
     transition: transform .2s;
+    border-radius: 10px;
 }
-.headshots:hover{
-    -ms-transform: scale(1.2); /* IE 9 */
-  -webkit-transform: scale(1.2); /* Safari 3-8 */
-  transform: scale(1.2); 
+.profile:hover{
+    -ms-transform: scale(.5);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); 
 }
-.avery p{
-    margin-left: 28px;
+.personName{
+    text-align: center;
 }
 
-.mike p{
-    margin-left: 34px;
-}
-.avery{
-    margin-left: 20px;
-    margin-right: 20px;
+@media screen and (max-width: 600px) {
+    .photos{
+        flex-wrap: nowrap;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 30px;
+    }
+    .profile{
+        height: 300px;
+    }
+    .centerInput{
+        height: 20px;
+        width: 100%;
+    }
 }
