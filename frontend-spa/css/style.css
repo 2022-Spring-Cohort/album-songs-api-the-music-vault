@@ -6,12 +6,8 @@
     'footer';
     gap: 5em;
     background-color: #dadbdc;
-    
     font-family: 'Overpass', sans-serif;
-    
-    
 }
-
 
 .header{
     height: 2.5in;
@@ -31,8 +27,7 @@
 .nav{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;
     margin-right: 30px;
     margin-top: 240px;
@@ -47,6 +42,7 @@
 .nav-links{
     font-size: x-large;
     padding: 10px;
+    text-decoration: none;
 }
 
 .main{
@@ -60,14 +56,8 @@
 }
 .albumTitle{
     font-family: 'Overpass', sans-serif;
-
 }
 .albumTitleHeader{
-    text-align: center;
-    font-family: 'Bungee', cursive;
-}
-
-.songTitleHeader{
     text-align: center;
     font-family: 'Bungee', cursive;
 }
@@ -89,8 +79,6 @@
     font-family: 'Overpass', sans-serif;
     font-size: 22px;
 }
-
-
 .inner {
     position: relative;
     width: 100%;
@@ -100,12 +88,10 @@
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
-
 .flip-card:hover .inner {
     transform: rotateY(180deg);
     box-shadow: #caa55686 -5px 5px, #caa55648 -10px 10px, #caa55623 -15px 15px, #caa55610 -20px 20px, #caa55609 -25px 25px;
 }
-
 .card-front, .card-back {
     position: absolute;
     width: 100%;
@@ -124,26 +110,25 @@
     color: rgb(15, 15, 15);
     transform: rotateY(180deg);
 }
-
 .updateIcon{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     padding-left: 1em;
-}
-.editBtn{
-    height: 1cm;
-    margin-left: 5px;
 }
 .deleteBtn{
     height: 1cm;
-    margin-right: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
-
+.updateBtn{
+    margin-left: 5px;
+}
 
 .backBtn{
     height: 1cm;
-    margin: 20px;
 }
 
 .footer{
@@ -155,4 +140,21 @@
 .footer p{
    align-content: center;
     font-weight: bold;
+    color: black;
+}
+
+@media screen and (max-width: 600px) {
+    .nav{ 
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .aboutUs{
+        margin-left: 10px;
+    }
+    .main{
+        padding: 0;
+    }
+    .album{
+        text-align: center;
+    }
 }

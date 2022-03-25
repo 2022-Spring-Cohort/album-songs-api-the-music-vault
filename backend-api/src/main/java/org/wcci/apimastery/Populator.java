@@ -21,7 +21,6 @@ public class Populator implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         //todo add album art. In a file ready to connect
-        // todo make duration a string. DONE
 
         //Avery's Favorite Album and Song
         Album album1 = new Album("Writings on the Wall", "./images/WOTW.jpg", "Columbia Records");
@@ -48,14 +47,14 @@ public class Populator implements CommandLineRunner {
 
 
         //Extra Album and Songs 2
-        Album album4 = new Album("The Rise and Fall of Ziggy Stardust and the Spiders From Mars", "./images/TRAFOZSATSFM.jpg", "RCA");
-        albumRepo.save(album4);
-        Song song6 = new Song("Starman", "https://www.youtube.com/watch?v=sI66hcu9fIs", "4:16", "David Bowie", album4);
-        songRepo.save(song6);
-        Song song7 = new Song("Lady Stardust", "https://www.youtube.com/watch?v=iARDYHakmC0", "3:21", "David Bowie", album4);
-        songRepo.save(song7);
-        Song song8 = new Song("Hang on to Yourself", "https://www.youtube.com/watch?v=I71sQkFIe_c", "2:39", "David Bowie", album4);
-        songRepo.save(song8);
+//        Album album4 = new Album("The Rise and Fall of Ziggy Stardust and the Spiders From Mars", "./images/TRAFOZSATSFM.jpg", "RCA");
+//        albumRepo.save(album4);
+//        Song song6 = new Song("Starman", "https://www.youtube.com/watch?v=sI66hcu9fIs", "4:16", "David Bowie", album4);
+//        songRepo.save(song6);
+//        Song song7 = new Song("Lady Stardust", "https://www.youtube.com/watch?v=iARDYHakmC0", "3:21", "David Bowie", album4);
+//        songRepo.save(song7);
+//        Song song8 = new Song("Hang on to Yourself", "https://www.youtube.com/watch?v=I71sQkFIe_c", "2:39", "David Bowie", album4);
+//        songRepo.save(song8);
 
         //Extra Album and Songs 3
         Album album5 = new Album("Oracular Spectacular", "./images/OC.jpg", "Columbia Records");

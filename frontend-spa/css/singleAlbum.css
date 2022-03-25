@@ -10,6 +10,9 @@
     gap: 20px;
 }
 
+.updateSongBtn{
+    margin-left: 5px;
+}
 .addNewSong{
     display: flex;
     flex-wrap: wrap;
@@ -36,6 +39,7 @@
 .albumReview{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
 }
@@ -68,7 +72,6 @@
 
 .commentDisplay{
     margin-top: -20px;
-
 }
 
 .albumRating{
@@ -87,10 +90,20 @@
     margin-bottom: 5px;  
 }
 .reviewInput{
-    margin: 30px;
+    margin-top: -10px;;
+    margin-left: 15px;
+    margin-bottom: 15px;
 }
 .reviewInput button{
     font-weight: bold;
     padding: 5px;
     border-radius: 5px;
+    justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+  .displayReview{
+    margin-left: 30px;
+  }
+
 }
